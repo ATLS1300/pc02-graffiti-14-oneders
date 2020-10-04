@@ -7,29 +7,30 @@ ATLS 1300
 Author: Dr. Z
 Author: Luca Damian
 May 29, 2020
+A creative art piece on a picture of Jeff Bezos. Intended to give Jeff Bezos red eye and create a variety of dollar signs ($) in different sizes and colors around his head.
 '''
 
-from turtle import * #import the library of commands that you'd like to use
+from turtle import
+import random 
 
 colormode(255)
 
-# Create a panel to draw on. 
+# Create a panel to draw on
 panel = Screen()
 w = 750 # width of panel
 h = 750 # height of panel
-panel.setup(width=w, height=h) #600 x 600 is a decent size to work on. 
-#You can experiment by making it the size of your screen or super tiny!
+panel.setup(width=w, height=h)
 
 # Create a colorful background and add Bezos image to it
 image = "Bezos.gif"
 panel.bgcolor("lightblue")
 panel.bgpic(image)
-
-#=======Add your code here======
 speed(10)
 Turtle()
 color('red')
 pensize(10)
+
+#Add red eyes to Jeff Bezos 
 up()
 left(90)
 forward(130)
@@ -44,50 +45,44 @@ left(90)
 forward(13)
 dot(10)
 left(90)
-forward(270)
-color('green')
-down()
-forward(50)
-left(90)
-forward(50)
-left(90)
-forward(50)
-right(90)
-forward(50)
-right(90)
-forward(50)
-up()
-left(180)
-forward(15)
-right(90)
-forward(8)
-left(180)
-pensize(5)
-down()
-forward(116)
-up()
-right(90)
-forward(20)
-right(90)
-down()
-forward(116)
-up()
-goto(200,100)
-fillcolor([0,255,255])
-down()
-begin_fill()
-circle(30)
-end_fill()
-up()
-forward(50)
-down()
-forward(100)
-right(90)
-forward(100)
-right(90)
-forward(100)
-right(90)
-forward(100)
+forward(270) 
+
+#Thi$ is where we make the money 
+repeats = range(15) 
+for element in repeats: #this for loop will create 15 differently colored dollar signs in random locations on the panel 
+    colors = [(155, 235, 134) , (56, 189, 21) , (58, 233, 12) , (31, 119, 8)]#four shades of green 
+    color(random.choice(colors)) #chooses a random color from my selected list of shades of green above
+    penup()
+    pensize(10)
+    goto(random.randint(-350,350),random.randint(-350,350))#chooses a random place on the panel to begin drawing the dollar sign 
+    down()
+    forward(50)#next 10 lines of code make the initial dollar sign shape 
+    left(90)
+    forward(50)
+    left(90)
+    forward(50)
+    right(90)
+    forward(50)
+    right(90)
+    forward(50)
+    penup() #next 14 lines of codes make two lines for the dollar signs 
+    pensize(5)
+    left(180)
+    forward(15)
+    right(90)
+    forward(8)
+    left(180)
+    down()
+    forward(116)
+    up() 
+    right(90)
+    forward(20)
+    right(90)
+    down()
+    forward(116)
+    
+    done()
+
 
 
 
